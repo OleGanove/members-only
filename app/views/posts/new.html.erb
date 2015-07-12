@@ -1,13 +1,15 @@
-<h1>Create a new post</h1>
+<div class="container">
+  <h1>Create a new post</h1>
 
-<%= form_for(@post) do |f| %>
+  <%= form_for(@post) do |f| %>
   
-  <%= f.label :title %>
-  <%= f.text_field :title %><br>
+    <p><%= f.label :title %></p>
+    <p><%= f.text_field :title %></p>
 
-  <%= f.label :body %>
-  <%= f.text_area :body %><br>
+    <p><%= f.label :body %></p>
+    <p><%= f.text_area :body %></p>
 
-  <%= f.submit "Submit" %>
+    <p><%= f.submit "Submit" %></p>
 
-<% end %>
+  <% end %>
+</div>

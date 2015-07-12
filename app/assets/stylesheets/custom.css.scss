@@ -1,0 +1,65 @@
+/* Header */
+
+
+body {
+
+  .container {
+  	text-align: center;
+  	color: grey;
+
+  	.post {
+  	   margin: 0em auto;
+  	   padding: 1em 0em;
+  	   width: 50%;
+
+  	   p {
+  	   	text-align: left;
+  	   }
+  	}
+  }
+}
+
+header {
+  .container { 
+  	background-color: #FF4364;
+  	height:3em;
+  	overflow: hidden;
+  	display: table;
+  	width: 100%;
+
+
+  	#Logo {
+  	  display: table-cell;
+  	  vertical-align: middle;
+  	  text-align: left;
+
+  	  a { 	
+  	    text-decoration: none;
+  	    color: white;
+  	    margin: 1em;
+  	    font-family: "Lobster", cursive;
+  	    font-size: 1.5em;
+  	  }
+  	}
+
+  	nav {
+  	  float: right;
+  	  margin-right: 1em;
+
+  	  .pull-right {
+  	  	list-style-type: none;
+
+  	  	li {
+  	      display: inline; 
+
+  	      a{
+  	      	text-decoration: none;
+  	      	color: white;
+  	        margin: 0.5em;
+  	        text-transform: uppercase;
+  	      }		
+  	  	}
+  	  }
+  	}
+  }
+}

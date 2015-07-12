@@ -1,11 +1,17 @@
 <header>
-  <ul>
-    <% if signed_in? %>
-      <li><%= link_to "New Post", new_post_path %></li>
-      <li><%= link_to "Profile", current_user %></li>
-      <li><%= link_to "Log out", signout_path, method: "delete" %></li>
-    <% else %>
-      <li><%= link_to "Login", signin_path %></li>
-    <% end %>
-  </ul>
+  <div class="container">
+    <div id="Logo"><%= link_to "Lästerschwester", root_path %></div>
+    <nav>
+	  <ul class="nav pull-right">
+	    <li><%= link_to "Home", root_path %></li>
+	    <% if signed_in? %>
+	      <li><%= link_to "New Post", new_post_path %></li>
+	      <li><%= link_to "Profile", current_user %></li>
+	      <li><%= link_to "Log out", signout_path, method: "delete" %></li>
+	    <% else %>
+	      <li><%= link_to "Login", signin_path %></li>
+	    <% end %>
+	  </ul>
+    </nav>
+  </div>
 </header>

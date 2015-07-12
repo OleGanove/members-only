@@ -1,19 +1,29 @@
 class PostsController < ApplicationController
-  
+  # only signed in user can access the #new and #create action
+  before_action :signed_in_user, only: [:new, :create]
+
   def index
     @posts = Post.all
   end
-  # only signed in user can access the #new and #create action
-  before_action :signed_in_user, only: [:new, :create]
+
   def new
   	@post = Post.new
   end
 
   def create
     @post = Post.new(post_params)
-    @post.user_id = current_user.user_id
+    @post.user_id = current_user.id
+
     @post.save
     redirect_to root_path
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+
+    redirect_to(:back)
+    flash[:error] = "Post has been deleted"
   end
 
   private

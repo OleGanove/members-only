@@ -1,13 +1,18 @@
- <% flash.each do |key, value| %>
-   <%= value %>
- <% end %> 
+<div class="container">
 
+  <% flash.each do |key, value| %>
+    <%= content_tag :div, value, class: "flash #{key}" %>
+  <% end %> 
 
-<% @posts.order("created_at desc").each do |post| %>
-  <h1><%= post.title %></h1>
-  <p><%= post.body %></p>
+  <% @posts.order("created_at desc").each do |post| %>
+  <div class="post">
+    <h1><%= post.title %></h1>
+    <p><%= post.body %></p>
 
-  <% if signed_in? %>
-    <p>Autor: <%= post.user.name %></p>
+    <% if signed_in? %>
+      <p>Created by: <%= post.user.name %></p>
+
+    <% end %>
+  </div>
   <% end %>
-<% end %>
+</div>
