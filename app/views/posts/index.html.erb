@@ -1,0 +1,13 @@
+ <% flash.each do |key, value| %>
+   <%= value %>
+ <% end %> 
+
+
+<% @posts.order("created_at desc").each do |post| %>
+  <h1><%= post.title %></h1>
+  <p><%= post.body %></p>
+
+  <% if signed_in? %>
+    <p>Autor: <%= post.user.name %></p>
+  <% end %>
+<% end %>

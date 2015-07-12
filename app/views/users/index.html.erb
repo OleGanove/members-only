@@ -1,0 +1,12 @@
+<h1>All users</h1>
+   <% flash.each do |key, value| %>
+     <%= value %>
+   <% end %> 
+<ul>
+  <% @users.each do |user| %>
+    <li> <%= user.name %> | <%= user.email %> </li>
+  <% end %>
+</ul>
+
+<%= link_to "Sign in", signin_path %>
+
